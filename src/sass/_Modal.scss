@@ -1,0 +1,43 @@
+.modal-title {
+  font-size: 2.5rem;
+}
+
+.modal-body {
+  font-size: 2rem;
+  @include respond(mobile-l) {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    margin: auto;
+  }
+}
+.modal-lg {
+  @include respond(big-desktop) {
+    max-width: 900px;
+  }
+  @include respond(laptop) {
+    max-width: 800px;
+  }
+  @include respond(tablet) {
+    max-width: 740px;
+  }
+  @include respond(mobile-l) {
+    max-width: 300px;
+    margin: auto;
+  }
+}
+
+.close span {
+  font-size: 3rem;
+}
+
+.spinner-border {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 6rem;
+  height: 6rem;
+  @include respond(mobile-l) {
+    left: 45%;
+  }
+}

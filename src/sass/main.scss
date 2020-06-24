@@ -1,0 +1,156 @@
+@mixin respond($breakpoint) {
+  @if $breakpoint == mobile-s {
+    @media only screen and (max-width: 320px) {
+      @content;
+    }
+  }
+  @if $breakpoint == mobile-m {
+    @media only screen and (max-width: 475px) {
+      @content;
+    }
+  }
+  @if $breakpoint == mobile-l {
+    @media only screen and (max-width: 715px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint == laptop {
+    @media only screen and (max-width: 992px) {
+      @content;
+    }
+  }
+  @if $breakpoint == laptop-l {
+    @media only screen and (max-width: 1440px) {
+      @content;
+    }
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (max-width: 2560 px) {
+      @content;
+    }
+  }
+}
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  @include respond(big-desktop) {
+    font-size: 70%;
+  }
+  @include respond(laptop-l) {
+    font-size: 62.5%;
+  }
+  @include respond(laptop) {
+    font-size: 62.5%;
+  }
+  @include respond(tablet) {
+    font-size: 58%;
+  }
+  @include respond(mobile-l) {
+    font-size: 62.5%;
+  }
+  @include respond(mobile-m) {
+    font-size: 62.5%;
+  }
+  @include respond(mobile-s) {
+    font-size: 55%;
+  }
+}
+.application {
+  position: relative;
+}
+body {
+  box-sizing: border-box;
+  overflow: hidden !important;
+  padding: 0 !important;
+  @include respond(tablet) {
+    overflow: auto !important;
+  }
+  @include respond(mobile-l) {
+    overflow: auto !important;
+  }
+}
+
+.header {
+  height: auto;
+  width: 100vw;
+  order: 1;
+
+  position: relative;
+  overflow: hidden;
+
+  @include respond(big-desktop) {
+    height: 100vh;
+  }
+  @include respond(mobile-l) {
+    height: 200px;
+    order: 2;
+  }
+  @include respond(mobile-m) {
+    height: 200px;
+    order: 2;
+  }
+  @include respond(mobile-s) {
+    height: 200px;
+    order: 2;
+  }
+}
+.heading {
+  margin-top: 1rem;
+  margin-bottom: 1.4rem;
+  color: white;
+  letter-spacing: 0.03em;
+  font-size: 3rem;
+
+  @include respond(big-desktop) {
+    font-size: 4rem;
+  }
+  @include respond(mobile-l) {
+    text-align: center;
+  }
+}
+.note {
+  color: white;
+  letter-spacing: 0.03em;
+  font-size: 2rem;
+}
+img {
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  position: relative;
+}
+.containerClass {
+  display: flex;
+  background-color: #701910;
+  width: 35vw;
+  height: 100vh;
+  order: 1;
+  @include respond(tablet) {
+    width: 50vw;
+  }
+  @include respond(mobile-l) {
+    width: 100vw;
+    // height: calc(100vh - 60px);
+    order: 1;
+  }
+}
+
+@import "Input";
+@import "Button";
+@import "ImageUpload";
+@import "Modal";
+@import "BackDrop";
+@import "figures";
+@import "form";

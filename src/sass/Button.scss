@@ -1,0 +1,47 @@
+.btn {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.btn__sumbit {
+  margin-top: 1rem;
+  padding: 3rem;
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  background-color: white;
+  font-family: "Roboto", sans-serif;
+
+  border: 1px solid white;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    text-indent: -20px;
+  }
+  &:hover::before {
+    opacity: 1;
+    text-indent: 0px;
+  }
+  &::before {
+    content: "\2192";
+    font-family: FontAwesome;
+    font-size: 1.5rem;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    height: 100%;
+    width: 4rem;
+    transition: all 0.2s linear 0s;
+  }
+}
