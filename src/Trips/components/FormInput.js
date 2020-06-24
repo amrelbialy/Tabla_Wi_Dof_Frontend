@@ -109,14 +109,14 @@ const FormInput = props => {
       <div className="containerClass">
         <form className="trip__form" onSubmit={tripSubmitHandler}>
           <div className="trip__form-main">
-            <h1 className="heading"> Enter your details </h1>
-            <h4 className="note">*Required</h4>
+            <h1 className="heading"> Kindly fill the form </h1>
+
             <Input
               id="firstName"
               element="input"
               type="text"
               label="First Name"
-              placeholder="First Name*"
+              placeholder="First Name *"
               validators={[VALIDATOR_REQUIRE()]}
               errorText="Please enter a valid name"
               onInput={inputHandler}
@@ -127,7 +127,7 @@ const FormInput = props => {
               element="input"
               type="text"
               label="Last Name"
-              placeholder="Last Name*"
+              placeholder="Last Name *"
               validators={[VALIDATOR_REQUIRE()]}
               errorText="Please enter a valid name"
               onInput={inputHandler}
@@ -138,7 +138,7 @@ const FormInput = props => {
               id="email"
               type="email"
               label="E-Mail"
-              placeholder="E-Mail"
+              placeholder="E-Mail (optional)"
               validators={[VALIDATOR_EMAIL()]}
               errorText="Please enter a valid email address."
               onInput={inputHandler}
@@ -148,7 +148,7 @@ const FormInput = props => {
               element="input"
               type="number"
               label="Phone Number"
-              placeholder="Phone Number*"
+              placeholder="Phone Number *"
               validators={[VALIDATOR_MINLENGTH(11)]}
               errorText="Please enter a valid number(at least 11 needed)."
               onInput={inputHandler}
@@ -158,8 +158,8 @@ const FormInput = props => {
               element="input"
               type="text"
               label="How did you find us?"
-              placeholder="How did you find us?*"
-              validators={[VALIDATOR_REQUIRE()]}
+              placeholder="How did you find us?(optional)"
+              validators={[]}
               errorText="Please tell us how did you find us"
               onInput={inputHandler}
             />
@@ -169,7 +169,7 @@ const FormInput = props => {
                 element="input"
                 type="text"
                 label="destination"
-                placeholder="destination*"
+                placeholder="destination *"
                 validators={[VALIDATOR_REQUIRE()]}
                 errorText="Please choose a destination."
                 lesswidth={true}
@@ -181,12 +181,12 @@ const FormInput = props => {
               <ImageUpload
                 id="frontImage"
                 onInput={inputHandler}
-                side="National ID Front Image*"
+                side="National ID Front Image *"
               />
               <ImageUpload
                 id="backImage"
                 onInput={inputHandler}
-                side="National ID Back Image*"
+                side="National ID Back Image *"
               />
             </div>
           </div>

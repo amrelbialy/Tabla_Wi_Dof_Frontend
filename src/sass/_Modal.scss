@@ -4,6 +4,12 @@
 
 .modal-body {
   font-size: 2rem;
+  @include respond(tablet) {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    margin: auto;
+  }
   @include respond(mobile-l) {
     display: flex;
     flex-direction: column;
@@ -19,7 +25,8 @@
     max-width: 800px;
   }
   @include respond(tablet) {
-    max-width: 740px;
+    max-width: 300px;
+    margin: auto;
   }
   @include respond(mobile-l) {
     max-width: 300px;

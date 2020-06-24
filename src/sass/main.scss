@@ -54,7 +54,7 @@ html {
     font-size: 62.5%;
   }
   @include respond(tablet) {
-    font-size: 58%;
+    font-size: 75%;
   }
   @include respond(mobile-l) {
     font-size: 62.5%;
@@ -92,6 +92,10 @@ body {
   @include respond(big-desktop) {
     height: 100vh;
   }
+  @include respond(tablet) {
+    height: 300px;
+    order: 2;
+  }
   @include respond(mobile-l) {
     height: 200px;
     order: 2;
@@ -119,11 +123,7 @@ body {
     text-align: center;
   }
 }
-.note {
-  color: white;
-  letter-spacing: 0.03em;
-  font-size: 2rem;
-}
+
 img {
   height: 100%;
   width: 100%;
@@ -134,11 +134,11 @@ img {
 .containerClass {
   display: flex;
   background-color: #701910;
-  width: 35vw;
+  width: 30vw;
   height: 100vh;
   order: 1;
   @include respond(tablet) {
-    width: 50vw;
+    width: 100vw;
   }
   @include respond(mobile-l) {
     width: 100vw;

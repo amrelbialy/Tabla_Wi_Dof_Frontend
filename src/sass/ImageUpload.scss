@@ -1,6 +1,9 @@
 .image__upload-box {
   display: flex;
   flex-direction: row;
+  @include respond(tablet) {
+    justify-content: space-around;
+  }
   @include respond(mobile-l) {
     justify-content: space-around;
   }
