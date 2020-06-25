@@ -4,6 +4,7 @@ import Input from "../../shared/components/FormElements/Input";
 import {
   VALIDATOR_REQUIRE,
   VALIDATOR_MINLENGTH,
+  VALIDATOR_MAXLENGTH,
   VALIDATOR_EMAIL
 } from "../../shared/util/validators";
 import { useForm } from "../../shared/hooks/FormHook";
@@ -47,12 +48,16 @@ const FormInput = props => {
         value: "",
         isValid: false
       },
-      frontImage: {
-        value: null,
-        isValid: false
-      },
-      backImage: {
-        value: null,
+      // frontImage: {
+      //   value: null,
+      //   isValid: false
+      // },
+      // backImage: {
+      //   value: null,
+      //   isValid: false
+      // }
+      nationalId: {
+        value: "",
         isValid: false
       }
     },
@@ -62,16 +67,14 @@ const FormInput = props => {
   const tripSubmitHandler = async event => {
     event.preventDefault();
     try {
-      const formData = new FormData();
-
-      formData.append("firstName", formState.inputs.firstName.value);
-      formData.append("lastName", formState.inputs.lastName.value);
-      formData.append("phoneNumber", formState.inputs.phoneNumber.value);
-      formData.append("email", formState.inputs.email.value);
-      formData.append("opinion", formState.inputs.opinion.value);
-      formData.append("destination", auth.destination);
-      formData.append("frontImage", formState.inputs.frontImage.value);
-      formData.append("backImage", formState.inputs.backImage.value);
+      // formData.append("firstName", formState.inputs.firstName.value);
+      // formData.append("lastName", formState.inputs.lastName.value);
+      // formData.append("phoneNumber", formState.inputs.phoneNumber.value);
+      // formData.append("email", formState.inputs.email.value);
+      // formData.append("opinion", formState.inputs.opinion.value);
+      // formData.append("destination", auth.destination);
+      // formData.append("frontImage", formState.inputs.frontImage.value);
+      // formData.append("backImage", formState.inputs.backImage.value);
 
       // for (var pair of formData.entries()) {
       //   console.log(pair);
@@ -80,7 +83,16 @@ const FormInput = props => {
       await sendRequest(
         process.env.REACT_APP_BACKEND_URL + "/trips",
         "POST",
-        formData
+        JSON.stringify({
+          firstName: formState.inputs.firstName.value,
+          lastName: formState.inputs.lastName.value,
+          phoneNumber: formState.inputs.phoneNumber.value,
+          email: formState.inputs.email.value,
+          opinion: formState.inputs.opinion.value,
+          destination: auth.destination,
+          nationalId: formState.inputs.nationalId.value
+        }),
+        { "Content-Type": "application/json" }
       );
     } catch (err) {
       console.log(err);
@@ -134,6 +146,16 @@ const FormInput = props => {
               lesswidth={true}
             />
             <Input
+              id="nationalId"
+              element="input"
+              type="number"
+              label="nationalId"
+              placeholder="nationalId *"
+              validators={[VALIDATOR_MINLENGTH(14), VALIDATOR_MAXLENGTH(14)]}
+              errorText="Please enter a valid Id"
+              onInput={inputHandler}
+            />
+            <Input
               element="input"
               id="email"
               type="email"
@@ -153,6 +175,19 @@ const FormInput = props => {
               errorText="Please enter a valid number(at least 11 needed)."
               onInput={inputHandler}
             />
+
+            <Input
+              id="destination"
+              element="input"
+              type="text"
+              label="destination"
+              placeholder="destination *"
+              validators={[VALIDATOR_REQUIRE()]}
+              errorText="Please choose a destination."
+              lesswidth={true}
+              changeId={props.changeId}
+              readOnly={true}
+            />
             <Input
               id="opinion"
               element="input"
@@ -163,21 +198,8 @@ const FormInput = props => {
               errorText="Please tell us how did you find us"
               onInput={inputHandler}
             />
-            <div>
-              <Input
-                id="destination"
-                element="input"
-                type="text"
-                label="destination"
-                placeholder="destination *"
-                validators={[VALIDATOR_REQUIRE()]}
-                errorText="Please choose a destination."
-                lesswidth={true}
-                changeId={props.changeId}
-                readOnly={true}
-              />
-            </div>
-            <div className="image__upload-box">
+
+            {/* <div className="image__upload-box">
               <ImageUpload
                 id="frontImage"
                 onInput={inputHandler}
@@ -188,7 +210,7 @@ const FormInput = props => {
                 onInput={inputHandler}
                 side="National ID Back Image *"
               />
-            </div>
+            </div> */}
           </div>
 
           <MDBBtn
