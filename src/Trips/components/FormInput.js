@@ -150,7 +150,7 @@ const FormInput = props => {
               element="input"
               type="number"
               label="nationalId"
-              placeholder="nationalId *"
+              placeholder="NationalId *"
               validators={[VALIDATOR_MINLENGTH(14), VALIDATOR_MAXLENGTH(14)]}
               errorText="Please enter a valid Id"
               onInput={inputHandler}
@@ -181,7 +181,7 @@ const FormInput = props => {
               element="input"
               type="text"
               label="destination"
-              placeholder="destination *"
+              placeholder="Destination *"
               validators={[VALIDATOR_REQUIRE()]}
               errorText="Please choose a destination."
               lesswidth={true}
