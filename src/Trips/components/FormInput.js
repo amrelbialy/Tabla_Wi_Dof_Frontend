@@ -150,7 +150,7 @@ const FormInput = props => {
               element="input"
               type="number"
               label="nationalId"
-              placeholder="NationalId *"
+              placeholder="National Id *"
               validators={[VALIDATOR_MINLENGTH(14), VALIDATOR_MAXLENGTH(14)]}
               errorText="Please enter a valid Id"
               onInput={inputHandler}
