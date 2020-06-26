@@ -91,7 +91,7 @@ img {
 
 .containerClass {
   display: flex;
-  background-color: #701910;
+  background-color: #003658;
   width: 30vw;
   height: 100vh;
   order: 1; }
@@ -121,7 +121,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 100px #561b14 inset !important;
+  -webkit-box-shadow: 0 0 0 100px #003658 inset !important;
   -webkit-text-fill-color: white; }
 
 .form-control-large {
@@ -153,10 +153,10 @@ input:-webkit-autofill:active {
     letter-spacing: 0.04em;
     border-width: 0.1rem;
     border-style: solid;
-    border-color: #945650;
+    border-color: #0085a8;
     border-image: initial;
     border-radius: 0.2rem;
-    background-color: #701910;
+    background-color: #003658;
     color: white;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
     @media only screen and (max-width: 2560 px) {
@@ -183,7 +183,7 @@ input:-webkit-autofill:active {
   .form-control-large input:focus,
   .form-control-large textarea:focus {
     outline: none;
-    background-color: #701910;
+    background-color: #003658;
     border-color: #1c1e1f;
     box-shadow: 0 0 0 0.2rem #1c1e1f; }
 
@@ -217,10 +217,10 @@ input:-webkit-autofill:active {
     letter-spacing: 0.04em;
     border-width: 0.1rem;
     border-style: solid;
-    border-color: #945650;
+    border-color: #0085a8;
     border-image: initial;
     border-radius: 0.2rem;
-    background-color: #701910;
+    background-color: #003658;
     color: white;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
     @media only screen and (max-width: 2560 px) {
@@ -247,7 +247,7 @@ input:-webkit-autofill:active {
   .form__control-small input:focus,
   .form__control-small textarea:focus {
     outline: none;
-    background: #701910;
+    background: #003658;
     border-color: #1c1e1f;
     box-shadow: 0 0 0 0.2rem #1c1e1f; }
 
