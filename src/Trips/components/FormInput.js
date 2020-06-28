@@ -127,7 +127,7 @@ const FormInput = props => {
               id="firstName"
               element="input"
               type="text"
-              label="First Name"
+              label="First Name *"
               placeholder="First Name *"
               validators={[VALIDATOR_REQUIRE()]}
               errorText="Please enter a valid name"
@@ -138,7 +138,7 @@ const FormInput = props => {
               id="lastName"
               element="input"
               type="text"
-              label="Last Name"
+              label="Last Name *"
               placeholder="Last Name *"
               validators={[VALIDATOR_REQUIRE()]}
               errorText="Please enter a valid name"
@@ -149,7 +149,7 @@ const FormInput = props => {
               id="nationalId"
               element="input"
               type="number"
-              label="nationalId"
+              label="National Id *"
               placeholder="National Id *"
               validators={[VALIDATOR_MINLENGTH(14), VALIDATOR_MAXLENGTH(14)]}
               errorText="Please enter a valid Id"
@@ -159,7 +159,7 @@ const FormInput = props => {
               element="input"
               id="email"
               type="email"
-              label="E-Mail"
+              label="E-Mail (optional)"
               placeholder="E-Mail (optional)"
               validators={[VALIDATOR_EMAIL()]}
               errorText="Please enter a valid email address."
@@ -169,7 +169,7 @@ const FormInput = props => {
               id="phoneNumber"
               element="input"
               type="number"
-              label="Phone Number"
+              label="Phone Number *"
               placeholder="Phone Number *"
               validators={[VALIDATOR_MINLENGTH(11)]}
               errorText="Please enter a valid number(at least 11 needed)."
@@ -180,7 +180,7 @@ const FormInput = props => {
               id="destination"
               element="input"
               type="text"
-              label="destination"
+              label="Destination *"
               placeholder="Destination *"
               validators={[VALIDATOR_REQUIRE()]}
               errorText="Please choose a destination."
@@ -192,7 +192,7 @@ const FormInput = props => {
               id="opinion"
               element="input"
               type="text"
-              label="How did you find us?"
+              label="How did you find us?(optional)"
               placeholder="How did you find us?(optional)"
               validators={[]}
               errorText="Please tell us how did you find us"

@@ -107,15 +107,12 @@ textarea::placeholder {
   font-size: 2rem;
   color: black; }
 
-input::placeholder {
-  font-size: 1.8rem !important;
-  transition: color 300ms ease;
-  color: white;
-  opacity: 0.7; }
-
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0; }
+
+input::placeholder {
+  opacity: 0; }
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -130,17 +127,17 @@ input:-webkit-autofill:active {
   border-color: initial;
   border-image: initial;
   margin: 1rem 0 0 0;
-  padding: 0px; }
+  padding: 0px;
+  position: relative; }
   .form-control-large label {
-    font-size: 1.5rem;
-    font-weight: 700;
-    display: block;
-    transition: all 0.3s;
-    margin: 0; }
-  .form-control-large input:placeholder-shown + label {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-4rem); }
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    transition: all 0.1s ease-in-out;
+    cursor: text;
+    font-size: 1.8rem !important;
+    color: white;
+    opacity: 0.7; }
   .form-control-large input,
   .form-control-large textarea {
     height: 4rem;
@@ -186,6 +183,11 @@ input:-webkit-autofill:active {
     background-color: #003658;
     border-color: #1c1e1f;
     box-shadow: 0 0 0 0.2rem #1c1e1f; }
+  .form-control-large input:focus + label {
+    color: white;
+    top: -0.9rem;
+    font-size: 1.5rem;
+    background: #003658; }
 
 .form__control-small {
   border-width: initial;
@@ -193,18 +195,17 @@ input:-webkit-autofill:active {
   border-color: initial;
   border-image: initial;
   margin: 1rem 0 0 0;
-  padding: 0px; }
+  padding: 0px;
+  position: relative; }
   .form__control-small label {
-    font-size: 1.5rem;
-    font-weight: 700;
-    display: block;
-    transition: all 0.3s;
-    margin: 0;
-    color: white; }
-  .form__control-small input:placeholder-shown + label {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-4rem); }
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    transition: all 0.1s ease-in-out;
+    cursor: text;
+    font-size: 1.8rem !important;
+    color: white;
+    opacity: 0.7; }
   .form__control-small input,
   .form__control-small textarea {
     height: 4rem;
@@ -250,6 +251,11 @@ input:-webkit-autofill:active {
     background: #003658;
     border-color: #1c1e1f;
     box-shadow: 0 0 0 0.2rem #1c1e1f; }
+  .form__control-small input:focus + label {
+    color: white;
+    top: -0.9rem;
+    font-size: 1.5rem;
+    background: #003658; }
 
 .form-control--invalid {
   margin: 0rem;

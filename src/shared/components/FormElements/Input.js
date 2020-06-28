@@ -108,9 +108,8 @@ const Input = props => {
             "form-control--invalid"
       }`}
     >
-      {/* <label htmlFor={props.id}>{props.label}</label> */}
       {element}
-
+      <label htmlFor={props.id}>{props.label}</label>
       {id === "destination"
         ? !auth.destinationValid &&
           inputState.isFocused && <p>{props.errorText}</p>
