@@ -112,7 +112,13 @@ const Input = props => {
 
       <label
         htmlFor={props.id}
-        className={`${inputState.value.length > 0 ? `active` : ``}`}
+        className={`${
+          id === "destination"
+            ? auth.destination.length > 0 && `active`
+            : inputState.value.length > 0
+            ? `active`
+            : ``
+        }`}
       >
         {props.label}
       </label>
