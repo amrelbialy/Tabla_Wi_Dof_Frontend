@@ -109,7 +109,13 @@ const Input = props => {
       }`}
     >
       {element}
-      <label htmlFor={props.id}>{props.label}</label>
+
+      <label
+        htmlFor={props.id}
+        className={`${inputState.value.length > 0 ? `active` : ``}`}
+      >
+        {props.label}
+      </label>
       {id === "destination"
         ? !auth.destinationValid &&
           inputState.isFocused && <p>{props.errorText}</p>

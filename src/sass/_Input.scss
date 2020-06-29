@@ -10,6 +10,12 @@ input::-webkit-inner-spin-button {
 input::placeholder {
   opacity: 0;
 }
+.active {
+  color: white;
+  top: -0.9rem !important;
+  font-size: 1.5rem;
+  background: #003658;
+}
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
